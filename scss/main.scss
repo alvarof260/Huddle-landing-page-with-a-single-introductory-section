@@ -11,7 +11,7 @@
 .bg{
     background-image: url(../images/bg-desktop.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-color: $violet;
 }
 
@@ -21,38 +21,90 @@
 
 .header{
     .header__logo{
-        margin: 3rem 0 0 5rem;
-        width: 14.5rem;
-        img{
-            width: 100%;
-        }
+        margin: 5rem 0 0 5rem;
+        width: 12rem;
     }
 }
 
 .sec{
     display: flex;
     flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .box-image{
-    width: 55vw;
+    width: 52.8vw;
     .box-image__img{
-        width: 62rem;
-        margin: 6.5rem 0 0 5rem;
-        
-    }
-}
-.box-text{
-    width: 45vw;
-    .box-text__title{
-        font-family: $font-heading;
-        font-size: 3rem;
-        font-weight: 600;
-        color: $white;
-        padding-right: 20rem;
+        margin: 5.938rem 0 0 5rem;
+        width: 66rem;
     }
 }
 
+.box-text{
+    width: 48.2vw;
+    .box-text__title{
+        margin: 0 0 2.688rem 7.5rem;
+        font-family: $font-heading;
+        font-size: 3rem;
+        font-weight: 700;
+        color: $white;
+        width: 33.438rem;
+    }
+
+    .box-text__paragraph{
+        margin: 0 0 1.875rem 7.813rem;
+        font-family: $font-body;
+        font-size: 1.375rem;
+        font-weight: 400;
+        line-height: 1.8;
+        width: 39.063rem;
+        color: $white;
+
+    }
+
+    .box-text__btn{
+        margin: 0 0 0 7.5rem;
+        width: 15.625rem;
+        height: 3.5rem;
+        border: none;
+        border-radius: 2rem;
+        color: $violet;
+        font-family: $font-body;
+        font-size: 1.125rem;
+        font-weight: 400;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        cursor: pointer;
+        &:hover{
+            background-color: $soft-magenta;
+            color: $white;
+        }
+    }
+}
+
+.footer{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    gap: 35px;
+    margin: 0 200px 40px 0;
+    .fa-brands{
+        font-size: 24px;
+        color: $white;
+    }
+    .fa-brands::after{
+        content: ' ';
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        bottom: 40px;
+        right: 9.4%;
+        margin-right: 100px;
+        border: 3px solid $white;
+        border-radius: 2rem;
+    }
+    
+}
 
 
 .attribution { 
