@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import 'utilities/variables';
 @import 'utilities/mixin';
+@import 'components/buttons';
 
 *{
     border: 0%;
@@ -10,101 +11,116 @@
 }
 
 .bg{
-    background-image: url(../images/bg-desktop.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: $violet;
-}
-
-.wrapper{
+    @include desktop{
+        background-image: url(../images/bg-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $violet;
+    }
+    @include mobile{
+        background-image: url(../images/bg-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: $violet;
+    }
     height: 100vh;
 }
 
 .header{
     width: 100vw;
-    .header__logo{
-        margin: 5rem 0 0 5rem;
-        width: 12rem;
+    &__logo{
+    @include desktop{
+            width: $logo-width;
+            margin: 4.063rem 0 0 5rem;
+        }
+        @include mobile{
+            width: 6.25rem;
+            margin: 20px 0 0 25px;
+        }
     }
 }
 
 .sec{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+    @include desktop{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @include mobile{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
 }
 
 .box-image{
-    width: 52.8vw;
-    .box-image__img{
-        margin: 5.938rem 0 0 5rem;
-        width: 66rem;
+    @include desktop{
+        width: 53.45vw;
+        &__img{
+            width: $img-width;
+            margin: 6.563rem 0 0 5rem;
+        }
+    }
+    @include mobile{
+        &__img{
+            width: 100%;
+            margin: 0 25px;
+        }
     }
 }
 
 .box-text{
-    width: 48.2vw;
-    .box-text__title{
-        margin: 0 0 2.688rem 7.5rem;
-        font-family: $font-heading;
-        font-size: 3rem;
-        font-weight: 700;
-        color: $white;
-        width: 33.438rem;
-    }
-
-    .box-text__paragraph{
-        margin: 0 0 1.875rem 7.813rem;
-        font-family: $font-body;
-        font-size: 1.375rem;
-        font-weight: 400;
-        line-height: 1.8;
-        width: 39.063rem;
-        color: $white;
-
-    }
-
-    .box-text__btn{
-        margin: 0 0 0 7.5rem;
-        width: 15.625rem;
-        height: 3.5rem;
-        border: none;
-        border-radius: 2rem;
-        color: $violet;
-        font-family: $font-body;
-        font-size: 1.125rem;
-        font-weight: 400;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        cursor: pointer;
-        &:hover{
-            background-color: $soft-magenta;
+    @include desktop{
+        width: 46.55vw;
+        margin: 0 0 0 3.75rem;
+        &__title{
+            font-family: $font-heading;
+            font-size: 2.5rem;
+            font-weight: 700;
             color: $white;
+            width: 541px;
+            margin-bottom: 2.5rem;
+        }
+    
+        &__paragraph{
+            font-family: $font-body;
+            font-size: 1.125rem;
+            font-weight: 400;
+            line-height: 1.6;
+            width: 520px;
+            color: $white;
+            margin-bottom: 1.563rem;
         }
     }
+
 }
 
 .footer{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    gap: 35px;
-    margin: 0 200px 40px 0;
-    a{
-        font-size: 24px;
-        color: $white;
-        height: 40px;
-        width: 40px;
-        border: 3px solid $white;
-        border-radius: 50%;
-        text-align: center;
-        padding: 15px 7px 0 7px;      
-        cursor: pointer;     
-        &:hover{
-            color: $soft-magenta;
-            border: 3px solid $soft-magenta;
-        }
-    }    
+    @include desktop{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        height: 8.2vh;
+        gap: 15px;
+        margin: 27px 80px 40px 0;
+        a{
+            font-size: 20px;
+            color: $white;
+            height: 25px;
+            width: 25px;
+            border: 2px solid $white;
+            border-radius: 50%;
+            text-align: center;
+            padding: 7px 4px 0 4px;      
+            cursor: pointer;     
+            &:hover{
+                color: $soft-magenta;
+                border: 3px solid $soft-magenta;
+            }
+        }    
+    }
 }
 
 

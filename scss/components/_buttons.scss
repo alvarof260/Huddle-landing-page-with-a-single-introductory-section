@@ -1,0 +1,18 @@
+.box-text__btn{
+    @include desktop{
+        width: 12.5rem;
+        height: 3.438rem;
+        border: none;
+        border-radius: 2rem;
+        color: $violet;
+        font-family: $font-body;
+        font-size: 1.125rem;
+        font-weight: 400;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        cursor: pointer;
+        &:hover{
+            background-color: $soft-magenta;
+            color: $white;
+        }
+    }
+}
