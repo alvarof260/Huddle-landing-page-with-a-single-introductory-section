@@ -17,80 +17,187 @@
         background-size: contain;
         background-color: $violet;
     }
+    @include desktop{
+        background-image: url(../images/bg-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $violet;
+    }
+}
+
+.wrapper{
+    @include desktop{
+        width: 1284px;
+        height: 700px;
+        margin: 60px auto 0;
+    }
 }
 
 .header{
     &__logo{
-        width: 140px;
-        margin: 30px 25px 70px 30px;
+        @include mobile{
+            width: 140px;
+            margin: 30px 25px 70px 30px;
+        }
+        @include desktop{
+            width: $logo-width;
+            margin-bottom: 105px;
+        }
     }
 }
 
 .sec{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    width: 100vw;
+    @include mobile{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        width: 100vw;
+    }
+    @include desktop{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    }
 }
 
 .box-image{
-    margin: 0 30px 70px 30px;
+    @include mobile{
+        margin: 0 auto 70px auto;
+    }
+    @include desktop{
+        width: 50vw;
+    }
     &__img{
-        width: 100%;
+        @include mobile{
+            width: 85vw;
+        }
+        @include desktop{
+            width: $img-width;
+        }
     }
 }
 
 .box-text{
-    margin: 0px 30px 0 30px;
-    text-align: center;
+    @include mobile{
+        margin: 0px 30px 0 30px;
+        text-align: center;
+    }
+    @include desktop{
+        margin: 0 0 0 60px;
+        width: 50vw;
+    }
     &__title{
-        font-family: $font-heading;
-        color: $white;
-        font-size: 28px;
-        margin-bottom: 30px;
+        @include mobile{
+            font-family: $font-heading;
+            color: $white;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        @include desktop{
+            font-family: $font-heading;
+            color: $white;
+            font-size: 42px;
+            width: 480px;
+            margin-bottom: 40px;
+        }
     }
     &__paragraph{
-        font-family: $font-body;
-        color: $white;
-        font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 25px;
+        @include mobile{
+            font-family: $font-body;   
+            color: $white;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        @include desktop{
+            font-family: $font-body;
+            color: $white;
+            font-size: 18px;
+            line-height: 1.7;
+            width: 520px;
+            margin-bottom: 45px;
+        }
     }
     &__btn{
-        width: 200px;
-        height: 40px;
-        border: none;
-        border-radius: 2rem;
-        color: $violet;
-        font-family: $font-body;
-        font-size: 14px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        &:hover,&:focus{
-            background-color: $soft-magenta;
-            color: $white;
-            
+        @include mobile{
+            width: 200px;
+            height: 40px;
+            border: none;
+            border-radius: 2rem;
+            color: $violet;
+            font-family: $font-body;
+            font-size: 14px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            &:hover,&:focus{
+                background-color: $soft-magenta;
+                color: $white;
+                
+            }
+        }
+        @include desktop{
+            width: 200px;
+            height: 55px;
+            border: none;
+            border-radius: 2rem;
+            color: $violet;
+            font-family: $font-body;
+            font-size: 16px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            cursor: pointer;
+            &:hover,&:focus{
+                background-color: $soft-magenta;
+                color: $white;
+            }
         }
     }
 }
 
 .footer{
-    display: flex;
-    justify-content: center;
-    margin: 75px 0;
+    @include mobile{
+        display: flex;
+        justify-content: center;
+        margin: 75px 0;
+    }
+    @include desktop{
+        border: 3px solid red;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+    }
     &__items{
         a{
-            padding: 5px 2px 0 2px ;
-            content: '';
-            width: 25px;
-            height: 25px;
-            border: 2px solid $white;
-            border-radius: 2rem;
-            text-align: center;
-            font-size: 18px;
-            color: $white;
-            &:hover,&:focus{
-                color: $soft-magenta;
-                border-color: $soft-magenta;
+            @include mobile{
+                padding: 5px 2px 0 2px ;
+                content: '';
+                width: 25px;
+                height: 25px;
+                border: 2px solid $white;
+                border-radius: 2rem;
+                text-align: center;
+                font-size: 18px;
+                color: $white;
+                &:hover,&:focus{
+                    color: $soft-magenta;
+                    border-color: $soft-magenta;
+                }
+            }
+            @include desktop{
+                padding: 5px 2px 0 2px ;
+                content: '';
+                width: 25px;
+                height: 25px;
+                border: 2px solid $white;
+                border-radius: 2rem;
+                text-align: center;
+                font-size: 18px;
+                color: $white;
+                cursor: pointer;
+                &:hover,&:focus{
+                    color: $soft-magenta;
+                    border-color: $soft-magenta;
+                }
             }
         }
     }
